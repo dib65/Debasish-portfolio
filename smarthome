@@ -1,0 +1,41 @@
+#define BLYNK_TEMPLATE_ID "TMPL3L3-d7y2y"
+#define BLYNK_TEMPLATE_NAME "VoiceHome"
+#define BLYNK_AUTH_TOKEN "authkey"
+
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+
+char ssid[] = "Deba2";       // Replace with your WiFi name
+char pass[] = "12345678";   // Replace with your WiFi password
+
+int relayPins[] = {5, 4, 14, 12}; // D1, D2, D5, D6 (GPIO5, 4, 14, 12)
+
+void setup() {
+  Serial.begin(9600);
+
+  for (int i = 0; i < 4; i++) {
+    pinMode(relayPins[i], OUTPUT);
+    digitalWrite(relayPins[i], LOW); // Initial state OFF
+  }
+
+  WiFi.begin(ssid, pass);
+  Serial.print("Connecting to WiFi");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nWiFi connected");
+
+  Blynk.config(BLYNK_AUTH_TOKEN);
+  Blynk.connect();
+}
+
+// Virtual pin handlers
+BLYNK_WRITE(V0) { digitalWrite(relayPins[0], param.asInt()); }
+BLYNK_WRITE(V1) { digitalWrite(relayPins[1], param.asInt()); }
+BLYNK_WRITE(V2) { digitalWrite(relayPins[2], param.asInt()); }
+BLYNK_WRITE(V3) { digitalWrite(relayPins[3], param.asInt()); }
+
+void loop() {
+  Blynk.run();
+}
