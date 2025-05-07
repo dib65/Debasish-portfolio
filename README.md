@@ -33,9 +33,7 @@ Welcome to my GitHub profile! I specialize in crafting practical, affordable ele
 
 ### 🔗 Let's Connect
 - **Email**: debasishbiswas7024@gmail.com
-- **LinkedIn**: [linkedin.com/in/debashishbiswas](https://linkedin.com/in/debashishbiswas) *(optional)*
-- **Portfolio / Blog**: *(optional—can be GitHub Pages or Medium)*
-
+- **LinkedIn**: [linkedin.com/in/debashishbiswas](https://www.linkedin.com/in/debasish-biswas-959196305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 ---
 
 ![Deba's GitHub Stats](https://github-readme-stats.vercel.app/api?username=your-username&show_icons=true&theme=tokyonight)
